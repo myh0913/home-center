@@ -1,33 +1,36 @@
 <template>
-  <draggable
-    :list="list"
-    :disabled="false"
-    class="list-group"
-    ghost-class="ghost"
-    :move="checkMove"
-    @start="dragging = true"
-    @end="dragging = false"
-  >
-    <template #item="{ element }">
-      <div>{{ element.name }}</div>
-    </template>
-  </draggable>
-  <draggable
-    v-model="list"
-    v-bind="dragOptions"
-    item-key="id"
-    :component-data="{
-      tag: 'ul',
-      type: 'transition-group',
-      name: !dragging ? 'flip-list' : null,
-    }"
-    @start="dragging = true"
-    @end="dragging = false"
-  >
-    <template #item="{ element: obj, index: m }">
-      <div>{{ obj }}{{ m }}</div>
-    </template>
-  </draggable>
+  <div class="drag-container">
+    <draggable
+      :list="list"
+      :disabled="false"
+      class="list-group"
+      ghost-class="ghost"
+      :move="checkMove"
+      item-key="id"
+      @start="dragging = true"
+      @end="dragging = false"
+    >
+      <template #item="{ element, index }">
+        <div>{{ index + element.name }}</div>
+      </template>
+    </draggable>
+    <draggable
+      v-model="list"
+      v-bind="dragOptions"
+      item-key="id"
+      :component-data="{
+        tag: 'ul',
+        type: 'transition-group',
+        name: !dragging ? 'flip-list' : null,
+      }"
+      @start="dragging = true"
+      @end="dragging = false"
+    >
+      <template #item="{ element: obj, index: m }">
+        <div>{{ m }}:{{ obj.name }}</div>
+      </template>
+    </draggable>
+  </div>
 </template>
 <script setup lang="ts">
 import { ref } from "vue";
@@ -52,6 +55,11 @@ const checkMove = (e) => {
 };
 </script>
 <style scoped>
+.drag-container {
+  display: flex;
+  justify-content: space-between;
+  width: 400px;
+}
 .flip-list-move {
   transition: transform 0.5s;
 }

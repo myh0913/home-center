@@ -4,10 +4,13 @@ import { createPinia } from "pinia";
 import App from "./App.vue";
 import router from "./router";
 
-import "./assets/main.css";
+import "./style/index.scss";
+
+import { setupPlugin } from "./plugin/index";
 
 const app = createApp(App);
 
+setupPlugin(app);
 app.use(createPinia());
 app.use(router);
 
