@@ -6,18 +6,29 @@ export interface Tree {
 export const menuList = [
   {
     label: "组件",
-    value: "Components",
+    value: "myh-common-components",
     children: [
       {
         label: "QR code",
-        value: "myh-qrcode",
+        value: "myh-Qrcode",
         children: [],
       },
       {
         label: "Draggable",
-        value: "myh-draggable",
+        value: "myh-Draggable",
         children: [],
       },
     ],
   },
+  {
+    label: "UI组件",
+    value: "myh-ui-components",
+    children: [
+      {
+        label: "RisingBubble",
+        value: "myh-RisingBubble",
+        children: [],
+      }
+    ]
+  }
 ];

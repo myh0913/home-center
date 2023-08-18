@@ -50,8 +50,8 @@ const dragOptions = {
   ghostClass: "ghost",
 };
 
-const checkMove = (e) => {
-  console.log(list);
+const checkMove = (e: any) => {
+  console.log(e, list);
 };
 </script>
 <style scoped>
