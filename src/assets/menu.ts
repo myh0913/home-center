@@ -10,12 +10,17 @@ export const menuList = [
     children: [
       {
         label: "QR code",
-        value: "myh-Qrcode",
+        value: "myh-qrcode",
         children: [],
       },
       {
         label: "Draggable",
-        value: "myh-Draggable",
+        value: "myh-draggable",
+        children: [],
+      },
+      {
+        label: "Test",
+        value: "myh-test",
         children: [],
       },
     ],
@@ -26,9 +31,9 @@ export const menuList = [
     children: [
       {
         label: "RisingBubble",
-        value: "myh-RisingBubble",
+        value: "myh-risingBubble",
         children: [],
-      }
-    ]
-  }
+      },
+    ],
+  },
 ];

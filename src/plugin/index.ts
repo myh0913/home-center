@@ -1,7 +1,7 @@
-import { setupCustom } from './custom';
-import { setupElement } from './element';
+import { setupCustom } from "./custom";
+import { setupElement } from "./element";
 
 export const setupPlugin = (app: any) => {
-    setupCustom(app);
-    setupElement(app)
-}
+  setupCustom(app);
+  setupElement(app);
+};
